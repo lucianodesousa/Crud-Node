@@ -19,7 +19,7 @@ const Usuario = require('./models/Usuario');
 
 //CONFIGURAÇÃO DAS SESSIONS
 app.use(session({
-    secret: 'CriarUmaChaveQualquer1324!blablaba',
+    secret: 'luzulluoab219201sp',
     resave: false,
     saveUninitialized: true
 }))
@@ -42,7 +42,7 @@ app.get('/',(req,res)=>{
 app.get('/users',(req,res)=>{    
     Usuario.findAll().then((valores)=>{
         //console.log(valores.map(valores => valores.toJSON()));
-        if(valores.length >0){
+        if(valores.length > 0){
             return res.render('users',{NavActiveUsers:true, table:true, usuarios: valores.map(valores => valores.toJSON()) });
         }else{
             res.render('users',{NavActiveUsers:true, table:false});
